@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAYKIT☆ | Coming Soon</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #731212, #a82b2b);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        .container {
+            max-width: 480px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Logo animation */
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: 8px;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInUp 1s forwards;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #ffffffcc;
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: fadeInUp 1s 0.5s forwards;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            color: #e0e0e0;
+            opacity: 0;
+            animation: fadeInUp 1s 1s forwards;
+        }
+
+        .notify {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeInUp 1s 1.5s forwards;
+        }
+
+        input[type="email"] {
+            flex: 1;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 14px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        input[type="email"]::placeholder {
+            color: #ffffffaa;
+        }
+
+        input[type="email"]:focus {
+            border-color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #731212;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #f2f2f2;
+            box-shadow: 0 0 10px #ffffff88;
+        }
+
+        small {
+            display: block;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #ffffffaa;
+            opacity: 0;
+            animation: fadeInUp 1s 2s forwards;
+        }
+
+        .success {
+            margin-top: 20px;
+            color: #2fffa0;
+            display: none;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 35px;
+            font-size: 12px;
+            color: #ffffffaa;
+            opacity: 0;
+            animation: fadeInUp 1s 2.5s forwards;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        footer a:hover {
+            color: #2fffa0;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media(max-width: 500px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .logo {
+                font-size: 44px;
+                letter-spacing: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Animated Logo -->
+        <div class="logo">DAYKIT☆</div>
+        <h2>COMING SOON</h2>
+
+        <p>
+            DAYKIT is a unisex healthcare brand focused on science-driven, high-quality products designed for everyday
+            life. We’re launching our collection very soon.
+        </p>
+
+        <div class="notify">
+            <input type="email" id="email" placeholder="Enter your email" required />
+            <button onclick="notifyMe()">Notify Me</button>
+        </div>
+        <small>We respect your privacy. No spam.</small>
+
+        <div class="success" id="successMsg">
+            Thank you for joining DAYKIT. You’ll be the first to know when we launch.
+        </div>
+
+        <footer>
+            Contact us: <a href="mailto:daykiteg@gmail.com">daykiteg@gmail.com</a><br />
+            Follow us on
+            <a href="https://www.instagram.com/daykit.eg?igsh=YjE3NXhzc284azZr"
+                target="_blank">Instagram</a><br /><br />
+            © 2026 DAYKIT. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- EmailJS integration -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () { emailjs.init('YOUR_PUBLIC_KEY'); })();
+
+        function notifyMe() {
+            const email = document.getElementById('email').value;
+            if (!email) { alert('Please enter a valid email address.'); return; }
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', { user_email: email })
+                .then(function () {
+                    document.getElementById('successMsg').style.display = 'block';
+                    document.getElementById('email').value = '';
+                }, function (error) {
+                    alert('Something went wrong. Please try again later.');
+                });
+        }
+    </script>
+</body>
+
+</html>
