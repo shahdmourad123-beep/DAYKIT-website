@@ -110,7 +110,8 @@
 <p>DAYKIT☆ website is launching shortly. Enter your email to be notified!</p>
 
 <!-- Netlify Form -->
-<form name="notify" method="POST" data-netlify="true">
+<form name="notify" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="notify">
   <input type="email" name="email" placeholder="Enter your email" required />
   <button type="submit">Notify Me</button>
 </form>
@@ -132,3 +133,4 @@
 
 </body>
 </html>
+
