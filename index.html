@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DAYKIT☆ | Coming Soon</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #731212;
@@ -15,7 +19,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
@@ -31,13 +35,14 @@
     }
 
     h1 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 64px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       letter-spacing: 2px;
     }
 
-    p {
-      font-size: 22px;
+    h2 {
+      font-size: 20px;
       margin-bottom: 30px;
       color: var(--gray);
     }
@@ -72,6 +77,12 @@
       background: #f0eaea;
     }
 
+    #responseMessage {
+      margin-top: 15px;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
     footer {
       margin-top: auto;
       padding-top: 40px;
@@ -95,7 +106,7 @@
       h1 {
         font-size: 48px;
       }
-      p {
+      h2 {
         font-size: 18px;
       }
       input[type="email"] {
@@ -104,44 +115,51 @@
     }
   </style>
 </head>
+
 <body>
 
-<h1>Coming Soon</h1>
-<p>DAYKIT☆ website is launching shortly. Enter your email to be notified!</p>
+  <h1>DAYKIT☆</h1>
+  <h2>what your bag needs</h2>
+  <p>Our website is launching soon. Enter your email to get notified!</p>
 
-<!-- Netlify Form -->
-<form name="notify" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-  <!-- Hidden field required by Netlify -->
-  <input type="hidden" name="form-name" value="notify">
-  
-  <!-- Honeypot field (optional spam protection) -->
-  <p style="display:none;">
-    <label>Don’t fill this out: <input name="bot-field"></label>
-  </p>
-  
-  <!-- User email input -->
-  <input type="email" name="email" placeholder="Enter your email" required />
-  
-  <!-- Submit button -->
-  <button type="submit">Notify Me</button>
-</form>
-<p id="responseMessage" style="margin-top:15px;"></p>
+  <!-- Netlify Form -->
+  <form name="notify" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <!-- Hidden field for Netlify -->
+    <input type="hidden" name="form-name" value="notify">
+    
+    <!-- Honeypot for bots (optional) -->
+    <p style="display:none;">
+      <label>Don't fill this out: <input name="bot-field"></label>
+    </p>
+    
+    <!-- Email input -->
+    <input type="email" name="email" placeholder="Enter your email" required>
+    
+    <!-- Submit button -->
+    <button type="submit">Notify Me</button>
+  </form>
 
-<footer>
-  <p>Contact us: <a href="mailto:daykiteg@gmail.com">daykiteg@gmail.com</a> | Instagram: <a href="https://www.instagram.com/daykit.eg?igsh=YjE3NXhzc284azZr">@daykit</a></p>
-</footer>
+  <!-- Thank you message -->
+  <p id="responseMessage"></p>
 
-<script>
-  // Feedback after form submission
-  const form = document.querySelector('form[name="notify"]');
-  const response = document.getElementById('responseMessage');
+  <footer>
+    <p>
+      Contact us: 
+      <a href="mailto:daykiteg@gmail.com">daykiteg@gmail.com</a> | 
+      Instagram: <a href="https://www.instagram.com/daykit.eg?igsh=YjE3NXhzc284azZr" target="_blank">@daykit.eg</a>
+    </p>
+  </footer>
 
-  form.addEventListener('submit', function(e) {
-    response.textContent = "Thank you! Your email has been recorded. We’ll notify you when we launch.";
-  });
-</script>
+  <script>
+    // Show thank-you message and clear input
+    const form = document.querySelector('form[name="notify"]');
+    const response = document.getElementById('responseMessage');
+
+    form.addEventListener('submit', function(e) {
+      response.textContent = "Thank you! Your email has been recorded. We’ll notify you when we launch.";
+      form.reset(); // clears input
+    });
+  </script>
 
 </body>
 </html>
-
-
