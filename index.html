@@ -2,280 +2,135 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DAYKIT☆ | what your bag needs</title>
-    <style>
-        :root {
-            --primary: #731212;
-            --dark: #111111;
-            --light: #ffffff;
-            --offwhite: #f7f5f5;
-            --gray: #555555;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAYKIT☆ | Coming Soon</title>
+  <style>
+    :root {
+      --primary: #731212;
+      --light: #ffffff;
+      --gray: #f0eaea;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        body {
-            background-color: var(--offwhite);
-            color: var(--dark);
-            line-height: 1.6;
-        }
+    body {
+      background-color: var(--primary);
+      color: var(--light);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
 
-        header {
-            background: var(--light);
-            border-bottom: 1px solid #eee;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
 
-        .logo h1 {
-            color: var(--primary);
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
+    p {
+      font-size: 22px;
+      margin-bottom: 30px;
+      color: var(--gray);
+    }
 
-        .logo p {
-            font-size: 12px;
-            color: var(--gray);
-        }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
 
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-        }
+    input[type="email"] {
+      padding: 12px 15px;
+      border-radius: 25px;
+      border: none;
+      width: 250px;
+      font-size: 16px;
+    }
 
-        nav a:hover {
-            color: var(--primary);
-        }
+    button {
+      background: var(--light);
+      color: var(--primary);
+      padding: 12px 30px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-        .hero {
-            background: linear-gradient(rgba(115, 18, 18, 0.85), rgba(115, 18, 18, 0.85)), url('https://via.placeholder.com/1600x700') center/cover;
-            color: white;
-            padding: 120px 40px;
-            text-align: center;
-        }
+    button:hover {
+      background: #f0eaea;
+    }
 
-        .hero h2 {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
+    footer {
+      margin-top: auto;
+      padding-top: 40px;
+      font-size: 16px;
+      color: var(--light);
+      text-align: center;
+    }
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+    footer a {
+      color: var(--light);
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
 
-        .btn {
-            background: white;
-            color: var(--primary);
-            padding: 12px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+    footer a:hover {
+      text-decoration: underline;
+    }
 
-        .btn:hover {
-            background: #f0eaea;
-        }
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 48px;
+      }
 
-        section {
-            padding: 80px 40px;
-            max-width: 1200px;
-            margin: auto;
-        }
+      p {
+        font-size: 18px;
+      }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h3 {
-            font-size: 32px;
-            color: var(--primary);
-        }
-
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: var(--light);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-        }
-
-        .product-card img {
-            width: 100%;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .product-card h4 {
-            margin-bottom: 8px;
-        }
-
-        .product-card p {
-            font-size: 14px;
-            color: var(--gray);
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .product-card button {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-
-        .about {
-            text-align: center;
-            max-width: 800px;
-            margin: auto;
-            color: var(--gray);
-        }
-
-        .trust {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .trust div {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 12px;
-        }
-
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 40px;
-            text-align: center;
-        }
-
-        footer p {
-            font-size: 14px;
-            color: #ccc;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .hero h2 {
-                font-size: 36px;
-            }
-        }
-    </style>
+      input[type="email"] {
+        width: 200px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1>DAYKIT☆</h1>
-            <p>what your bag needs</p>
-        </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#shop">Shop</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <section class="hero">
-        <h2>Everyday Care, Anywhere You Go</h2>
-        <p>Minimal, effective essentials designed to live in your bag.</p>
-        <a href="#shop" class="btn">Shop Now</a>
-    </section>
-    <section id="shop">
-        <div class="section-title">
-            <h3>Featured Products</h3>
-        </div>
-        <div class="products">
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x400" alt="Hand Cream" />
-                <h4>Daily Hand Cream</h4>
-                <p>Fast-absorbing hydration for everyday use.</p>
-                <div class="price">120.00 LE.</div>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x400" alt="Moisturizer" />
-                <h4>Essential Moisturizer</h4>
-                <p>Lightweight moisture for all skin types.</p>
-                <div class="price">180.00 LE.</div>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <img src="https://via.placeholder.com/400x400" alt="Lip Balm" />
-                <h4>Everyday Lip Balm</h4>
-                <p>Soft, smooth lips all day long.</p>
-                <div class="price">60.00 LE.</div>
-                <button>Add to Cart</button>
-            </div>
-        </div>
-    </section>
-    <section id="about">
-        <div class="section-title">
-            <h3>About DAYKIT</h3>
-        </div>
-        <div class="about">
-            <p>DAYKIT is built around one simple idea: everyday essentials should be easy, reliable, and always within
-                reach. Our products are designed for everyone — clean formulas, modern design, and practical sizes that
-                fit perfectly into your daily routine.</p>
-        </div>
-    </section>
-    <section>
-        <div class="section-title">
-            <h3>Why Customers Trust Us</h3>
-        </div>
-        <div class="trust">
-            <div>
-                <h4>Clean Formulas</h4>
-                <p>Carefully selected ingredients you can trust.</p>
-            </div>
-            <div>
-                <h4>Unisex Design</h4>
-                <p>Minimal, modern products made for everyone.</p>
-            </div>
-            <div>
-                <h4>Everyday Ready</h4>
-                <p>Compact, practical, and made for daily life.</p>
-            </div>
-        </div>
-    </section>
-    <footer id="contact">
-        <h4>Contact Us</h4>
-        <p>Email: hello@daykit.com</p>
-        <p>Instagram: @daykit.eg</p>
-        <p>© 2026 DAYKIT☆. All rights reserved.</p>
-    </footer>
+  <h1>Coming Soon</h1>
+  <p>DAYKIT☆ website is launching shortly. Stay tuned!</p>
+  <form id="notifyForm">
+    <input type="email" id="email" placeholder="Enter your email" required />
+    <button type="submit">Notify Me</button>
+  </form>
+  <p id="responseMessage" style="margin-top:15px;"></p>
+  <footer>
+    <p>Contact us: <a href="mailto:daykiteg@gmail.com">daykiteg@gmail.com</a> | Instagram: <a
+        href="https://www.instagram.com/daykit.eg?igsh=YjE3NXhzc284azZr">@daykit.eg</a></p>
+  </footer>
+  <script>
+    document.getElementById('notifyForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const emailInput = document.getElementById('email');
+      const response = document.getElementById('responseMessage');
+      if (emailInput.value) {
+        response.textContent = `Thank you! We'll notify ${emailInput.value} when we launch.`;
+        emailInput.value = '';
+      }
+    });
+  </script>
 </body>
 
 </html>
