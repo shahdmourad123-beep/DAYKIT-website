@@ -2,252 +2,194 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DAYKIT☆ | Coming Soon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAYKIT☆ | Coming Soon</title>
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap"
-        rel="stylesheet">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #731212, #a82b2b);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #731212, #a82b2b);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #ffffff;
+    }
 
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%
-            }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-            50% {
-                background-position: 100% 50%
-            }
+    .container {
+      max-width: 480px;
+      width: 90%;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 50px 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
 
-            100% {
-                background-position: 0% 50%
-            }
-        }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      letter-spacing: 8px;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+    }
 
-        .container {
-            max-width: 480px;
-            width: 90%;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 50px 30px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            text-align: center;
-            backdrop-filter: blur(5px);
-        }
+    h2 {
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+      opacity: 0;
+      animation: fadeInUp 1s 0.4s forwards;
+    }
 
-        /* Logo animation */
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
-            font-weight: 700;
-            letter-spacing: 8px;
-            color: #ffffff;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transform: scale(0.8);
-            animation: fadeInUp 1s forwards;
-        }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #e0e0e0;
+      opacity: 0;
+      animation: fadeInUp 1s 0.8s forwards;
+    }
 
-        h2 {
-            font-weight: 400;
-            font-size: 20px;
-            letter-spacing: 2px;
-            color: #ffffffcc;
-            margin-bottom: 25px;
-            opacity: 0;
-            animation: fadeInUp 1s 0.5s forwards;
-        }
+    form {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeInUp 1s 1.2s forwards;
+    }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 35px;
-            color: #e0e0e0;
-            opacity: 0;
-            animation: fadeInUp 1s 1s forwards;
-        }
+    input[type="email"] {
+      flex: 1;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      outline: none;
+    }
 
-        .notify {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-            opacity: 0;
-            animation: fadeInUp 1s 1.5s forwards;
-        }
+    input::placeholder {
+      color: #ffffffaa;
+    }
 
-        input[type="email"] {
-            flex: 1;
-            padding: 15px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            font-size: 14px;
-            outline: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            transition: 0.3s;
-        }
+    button {
+      padding: 15px 25px;
+      border: none;
+      border-radius: 12px;
+      background: #ffffff;
+      color: #731212;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-        input[type="email"]::placeholder {
-            color: #ffffffaa;
-        }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px #ffffff88;
+    }
 
-        input[type="email"]:focus {
-            border-color: #ffffff;
-            background: rgba(255, 255, 255, 0.15);
-        }
+    .success {
+      display: none;
+      margin-top: 20px;
+      color: #2fffa0;
+      font-weight: 600;
+    }
 
-        button {
-            padding: 15px 25px;
-            border: none;
-            border-radius: 12px;
-            background: #ffffff;
-            color: #731212;
-            font-weight: 600;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+    footer {
+      margin-top: 35px;
+      font-size: 12px;
+      color: #ffffffaa;
+      opacity: 0;
+      animation: fadeInUp 1s 1.6s forwards;
+    }
 
-        button:hover {
-            transform: scale(1.05);
-            background: #f2f2f2;
-            box-shadow: 0 0 10px #ffffff88;
-        }
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-        small {
-            display: block;
-            margin-top: 8px;
-            font-size: 12px;
-            color: #ffffffaa;
-            opacity: 0;
-            animation: fadeInUp 1s 2s forwards;
-        }
+    footer a:hover {
+      color: #2fffa0;
+    }
 
-        .success {
-            margin-top: 20px;
-            color: #2fffa0;
-            display: none;
-            font-weight: 600;
-        }
-
-        footer {
-            margin-top: 35px;
-            font-size: 12px;
-            color: #ffffffaa;
-            opacity: 0;
-            animation: fadeInUp 1s 2.5s forwards;
-        }
-
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.2s;
-        }
-
-        footer a:hover {
-            color: #2fffa0;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media(max-width: 500px) {
-            .container {
-                padding: 40px 20px;
-            }
-
-            .logo {
-                font-size: 44px;
-                letter-spacing: 6px;
-            }
-        }
-    </style>
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <!-- Animated Logo -->
-        <div class="logo">DAYKIT☆</div>
-        <h2>COMING SOON</h2>
 
-        <p>
-            DAYKIT is a unisex healthcare brand focused on science-driven, high-quality products designed for everyday
-            life. We’re launching our collection very soon.
-        </p>
+  <div class="container">
 
-        <div class="notify">
-            <input type="email" id="email" placeholder="Enter your email" required />
-            <button onclick="notifyMe()">Notify Me</button>
-        </div>
-        <small>We respect your privacy. No spam.</small>
+    <div class="logo">DAYKIT☆</div>
+    <h2>COMING SOON</h2>
 
-        <div class="success" id="successMsg">
-            Thank you for joining DAYKIT. You’ll be the first to know when we launch.
-        </div>
+    <p>
+      DAYKIT is a unisex healthcare brand focused on science-driven,
+      high-quality products designed for everyday life.
+    </p>
 
-        <footer>
-            Contact us: <a href="mailto:daykiteg@gmail.com">daykiteg@gmail.com</a><br />
-            Follow us on
-            <a href="https://www.instagram.com/daykit.eg?igsh=YjE3NXhzc284azZr"
-                target="_blank">Instagram</a><br /><br />
-            © 2026 DAYKIT. All rights reserved.
-        </footer>
+    <!-- NETLIFY FORM -->
+    <form name="notify" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="notify" />
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <div class="success" id="successMsg">
+      Thank you! You’ll be the first to know when we launch 🚀
     </div>
 
-    <!-- EmailJS integration -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        (function () { emailjs.init('46BbNeALpWE-6QjQ_'); })();
+    <footer>
+      Contact us:
+      <a href="mailto:daykiteg@gmail.com">daykiteg@gmail.com</a><br />
+      Follow us on
+      <a href="https://www.instagram.com/daykit.eg" target="_blank">Instagram</a><br /><br />
+      © 2026 DAYKIT. All rights reserved.
+    </footer>
 
-        function notifyMe() {
-            const email = document.getElementById('email').value;
-            if (!email) { alert('Please enter a valid email address.'); return; }
+  </div>
 
-            emailjs.send('service_v3lj03y', 'template_h78mvg8', { user_email: email })
-                .then(function () {
-                    document.getElementById('successMsg').style.display = 'block';
-                    document.getElementById('email').value = '';
-                }, function (error) {
-                    alert('Something went wrong. Please try again later.');
-                });
-        }
-    </script>
+  <script>
+    const form = document.querySelector("form");
+    const success = document.getElementById("successMsg");
+
+    form.addEventListener("submit", () => {
+      success.style.display = "block";
+    });
+  </script>
+
 </body>
-
-
 </html>
-
